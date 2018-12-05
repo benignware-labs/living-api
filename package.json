@@ -1,0 +1,52 @@
+{
+  "name": "living-api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha",
+    "clean": "rm -rf dist",
+    "start": "webpack-dev-server",
+    "build": "webpack",
+    "watch": "webpack --watch",
+    "cli:build": "./bin/cli.js -o 'tmp'",
+    "cli:watch": "./bin/cli.js -w",
+    "cli:start": "./bin/cli.js -s"
+  },
+  "bin": {
+    "living-api": "./bin/cli.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "commander": "^2.19.0",
+    "ejs": "^2.6.1",
+    "escape-html": "^1.0.3",
+    "extract-loader": "^3.1.0",
+    "file-loader": "^2.0.0",
+    "glob": "^7.1.3",
+    "highlight.js": "^9.13.1",
+    "html-loader": "^0.5.5",
+    "loader-utils": "^1.1.0",
+    "showdown": "^1.9.0",
+    "uniqid": "^5.0.3",
+    "webpack-dev-middleware": "^3.4.0",
+    "webpack-merge": "^4.1.4"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.1.6",
+    "@babel/plugin-transform-spread": "^7.0.0",
+    "@babel/preset-env": "^7.1.6",
+    "css-loader": "^1.0.1",
+    "humanize-string": "^1.0.2",
+    "markdown-loader": "^4.0.0",
+    "mocha": "^5.2.0",
+    "node-sass": "^4.10.0",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "svg-url-loader": "^2.3.2",
+    "webpack": "^4.27.0",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.10"
+  },
+  "description": ""
+}

@@ -1,0 +1,12 @@
+<% if (items.length) { %>
+<nav class="ld-menu ld-menu-level-<%= level %>">
+<% } %>
+<% items.forEach(function(item){ %>
+  <a class="ld-menu-link"<% if (item.url) { %> href="<%= item.url %>"<% } %>>
+    <%= item.label %>
+  </a>
+  <%- include('menu', { items: item.items, level: level + 1 }); %>
+<% }) %>
+<% if (items.length) { %>
+</nav>
+<% } %>

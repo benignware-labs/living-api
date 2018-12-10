@@ -1,0 +1,17 @@
+<% if (items.length) { %>
+<nav class="ld-menu ld-menu-level-<%= level %>">
+  <% items.forEach((item, index) => { %>
+    <div class="ld-menu-item">
+      <% if (item.items.length) { %>
+        <input type="checkbox" id="cb-<%= `${level}-${index}` %>">
+      <% } %>
+      <label class="ld-menu-label" for="cb-<%= `${level}-${index}` %>">
+        <a class="ld-menu-link"<% if (item.url) { %> href="<%= item.url %>"<% } %>>
+          <%= item.label %>
+        </a>
+      </label>
+      <%- include('menu', { items: item.items, level: level + 1 }); %>
+    </div>
+  <% }) %>
+</nav>
+<% } %>

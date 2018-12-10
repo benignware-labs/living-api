@@ -1,7 +1,7 @@
 const path = require('path');
 const { sync: glob } = require('glob');
 
-const context = path.join(__dirname, 'src');
+const context = path.join(__dirname);
 
 module.exports = {
   context,
@@ -9,8 +9,7 @@ module.exports = {
   entry: glob(`{${[
     //'**/*.svg',
     '**/main.js',
-    '**/index.scss',
-    '**/*.svg'
+    '**/index.css'
   ].join(',')}}`, {
     cwd: context,
     ignore: ['node_modules/**/*.*'],
@@ -19,6 +18,12 @@ module.exports = {
   }),
   module: {
     rules: [{
+      test: require.resolve('turbolinks'),
+      use: [{
+        loader: 'expose-loader',
+        options: 'Turbolinks'
+      }]
+    }, {
       test: /\.js$/,
       // exclude: /(node_modules|bower_components)\/jquery/,
       use: {
@@ -39,7 +44,7 @@ module.exports = {
         }
       }
     }, {
-      test: /\.s?css$/,
+      test: /\.css$/,
       use: [/*{
         loader: "file-loader",
         options: {
@@ -54,13 +59,6 @@ module.exports = {
         loader: "css-loader",
         options: {
           sourceMap: true
-        }
-      }, {
-        loader: 'sass-loader',
-        options: {
-          includePaths: [
-            path.resolve(__dirname, 'node_modules')
-          ]
         }
       }]
     }, {
@@ -83,30 +81,6 @@ module.exports = {
         loader: 'svg-url-loader',
         options: {},
       },
-    },/* {
-      test: /\.html/,
-      use: {
-        loader: 'html-loader',
-        options: {},
-      },
-    }*/]
-  },
-  optimization: {
-    splitChunks: {
-      cacheGroups: {
-        commons: {
-          test: /[\\/](node_modules)[\\/]/,
-          name: "vendor",
-          chunks: "all",
-          priority: 5
-        },
-        svgxuse: {
-          test: /svgxuse/,
-          name: "svgxuse",
-          chunks: "all",
-          priority: 10
-        }
-      }
-    }
+    }]
   }
 };

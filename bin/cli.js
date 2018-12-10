@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 
+const path = require('path');
 const program = require('commander');
 const { build, watch, start } = require('../lib/webpack');
 
@@ -12,7 +13,7 @@ program
   .parse(process.argv);
 
 const config = {
-  output: program.output,
+  output: path.resolve(program.output),
   entry: program.entry
 };
 

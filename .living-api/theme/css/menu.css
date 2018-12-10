@@ -1,0 +1,44 @@
+.ld-menu {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  border: 1px solid #dedede;
+  font-size: 16px;
+}
+
+.ld-menu .ld-menu {
+  background: white;
+  font-size: 92%;
+  padding-left: 16px;
+}
+
+.ld-menu .ld-menu .ld-menu {
+  font-size: 80%;
+}
+
+.ld-menu-link:link {
+  font-weight: bold;
+  font-weight: 600;
+}
+
+.ld-menu-link:link,
+.ld-menu-link:visited {
+  color: inherit;
+}
+
+.ld-menu-link {
+  width: 100%;
+  padding: 8px 12px;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+.ld-menu-label {
+  display: flex;
+  flex-direction: column;
+}
+
+.ld-menu-level-0 > .ld-menu-link + .ld-menu-link {
+  border-top: 1px solid #dedede;
+  border-bottom: 1px solid #dedede;
+}

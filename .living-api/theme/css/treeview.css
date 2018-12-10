@@ -1,0 +1,77 @@
+.ld-treeview {
+  user-select: none;
+}
+
+.ld-treeview:hover input ~ label:before,
+.ld-treeview.hover input ~ label:before {
+  opacity: 1.0;
+}
+
+.ld-treeview > .ld-menu > .ld-menu-item {
+  /*border-bottom: 1px solid #dedede;*/
+}
+
+.ld-treeview input {
+  display: none;
+}
+
+.ld-treeview input ~ nav {
+  display: none;
+}
+
+.ld-treeview input:checked ~ nav {
+  display: block;
+}
+
+.ld-treeview input ~ label .ld-menu-link {
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  /*padding-left: 0.5rem;
+  padding-right: 0.5rem;*/
+  align-items: center;
+}
+
+/*
+.ld-treeview input ~ label:before {
+  content: '';
+  width: 0;
+  height: 0;
+  position: absolute;
+  margin-left: -1em;
+  margin-top: 0.4em;
+  border-width: 4px;
+  border-style: solid;
+  border-top-color: transparent;
+  border-right-color: rgba(255, 255, 255, 0.5);
+  border-bottom-color: rgba(255, 255, 255, 0.5);
+  border-left-color: transparent;
+  opacity: 0.0;
+}*/
+
+.ld-treeview input ~ label .ld-menu-link:after {
+	content: '';
+  position: relative;
+  width: 0;
+  height: 0.3rem;
+  border-style: solid;
+  border-width: 0.5rem 0.3rem 0 0.3rem;
+  border-color: currentColor transparent transparent transparent;
+  transform: rotate(-90deg);
+  transform-origin: center;
+}
+
+.ld-treeview input:checked  ~ label .ld-menu-link:after {
+  transform: rotate(0deg);
+}
+
+/*
+.ld-treeview input:checked ~ label:before {
+  margin-left: -0.8em;
+  border-width: 5px;
+  border-top-color: transparent;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+  border-left-color: rgba(255, 255, 255, 0.5);
+}*/

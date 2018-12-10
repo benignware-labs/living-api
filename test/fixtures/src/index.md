@@ -1,5 +1,11 @@
 # Getting started
 
+## Install
+
+```cli
+npm i living-api -D
+```
+
 ## Example 1
 
 ```html

@@ -10,8 +10,6 @@ const config = getConfig();
 
 const context = config.context || config.webpack && config.webpack.context || process.cwd();
 
-console.log('COTNEXT', context);
-
 module.exports = {
   mode: 'development',
   module: {

@@ -1,6 +1,5 @@
 import turbolinks from 'turbolinks';
 import 'highlight.js/styles/solarized-dark.css';
-
 //
 if (turbolinks && (!turbolinks.controller || !turbolinks.controller.started)) {
   turbolinks.start();

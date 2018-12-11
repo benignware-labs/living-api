@@ -4,7 +4,8 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha",
-    "build": "./bin/cli.js -o 'test/tmp'",
+    "clean": "rm -rf tmp",
+    "build": "npm run clean && cross-env NODE_ENV=production ./bin/cli.js -o 'tmp'",
     "watch": "./bin/cli.js -w",
     "start": "./bin/cli.js -s"
   },
@@ -14,8 +15,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.6.0",
     "classnames": "^2.2.6",
     "commander": "^2.19.0",
+    "cross-env": "^5.2.0",
     "ejs": "^2.6.1",
     "escape-html": "^1.0.3",
     "expose-loader": "^0.7.5",

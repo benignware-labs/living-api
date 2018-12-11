@@ -1,0 +1,28 @@
+.ld-dropdown-toggle {
+  display: none;
+}
+
+.ld-dropdown-label {
+  display: flex;
+  cursor: pointer;
+}
+
+.ld-dropdown-chevron {
+  transform: rotate(0);
+  transition: all 0.2s ease;
+  margin-left: auto;
+}
+
+.ld-dropdown-toggle:checked ~ .ld-dropdown-label .ld-dropdown-chevron {
+  transform: rotate(90deg);
+}
+
+.ld-dropdown-toggle ~ .ld-dropdown-content {
+  max-height: 0;
+  transition: all 0.2s ease;
+  overflow: hidden;
+}
+
+.ld-dropdown-toggle:checked ~ .ld-dropdown-content {
+  max-height: 100vh;
+}

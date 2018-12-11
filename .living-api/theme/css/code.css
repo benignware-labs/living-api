@@ -1,0 +1,4 @@
+.ld-sample:before {
+  content: 'f121';
+  display: inline-block;
+}

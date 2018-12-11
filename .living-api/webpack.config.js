@@ -11,7 +11,6 @@ const config = getConfig();
 const context = config.context || config.webpack && config.webpack.context || process.cwd();
 
 module.exports = {
-  mode: 'development',
   module: {
     rules: [{
       test: /\.(md)/,

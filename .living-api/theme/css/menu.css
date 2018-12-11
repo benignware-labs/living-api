@@ -31,11 +31,8 @@
   padding: 8px 12px;
   box-sizing: border-box;
   text-decoration: none;
-}
-
-.ld-menu-label {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
 }
 
 .ld-menu-level-0 > .ld-menu-link + .ld-menu-link {

@@ -16,6 +16,10 @@ sdsdsds
 datalist
 ```
 
+```js
+console.log('JS');
+```
+
 ## Example 2
 
 

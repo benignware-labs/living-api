@@ -1,20 +1,45 @@
 const path = require('path');
 const { sync: glob } = require('glob');
 
+const mode = process.env.NODE_ENV || 'development';
 const context = path.join(__dirname);
+
+const cssLoaders = [
+  ...(
+    mode === 'production'
+      ? [{
+          loader: "file-loader",
+          options: {
+            name: "[name].css",
+            emitFile: true
+          }
+        }, {
+          loader: 'extract-loader'
+        }]
+      : [{
+        loader: 'style-loader'
+      }]
+  ),
+  {
+    loader: "css-loader",
+    options: {
+      sourceMap: true
+    }
+  }
+];
+
+console.log('cssLoaders', cssLoaders);
 
 module.exports = {
   context,
-  mode: 'development',
+  mode,
   entry: glob(`{${[
-    //'**/*.svg',
     '**/main.js',
     '**/index.css'
   ].join(',')}}`, {
     cwd: context,
     ignore: ['node_modules/**/*.*'],
-    realpath: true,
-    //absolute: true
+    realpath: true
   }),
   module: {
     rules: [{
@@ -25,62 +50,51 @@ module.exports = {
       }]
     }, {
       test: /\.js$/,
-      // exclude: /(node_modules|bower_components)\/jquery/,
       use: {
         loader: 'babel-loader',
         options: {
           presets: [
             [
-              "@babel/preset-env", {
-                "targets": {
-                  "browsers": ["last 2 versions", "safari >= 7"]
+              '@babel/preset-env', {
+                targets: {
+                  browsers: [
+                    'last 2 versions',
+                    'safari >= 7'
+                  ]
                 }
               }
             ]
-          ],
-          plugins: [
-            "@babel/plugin-transform-spread"
           ]
         }
       }
     }, {
       test: /\.css$/,
-      use: [/*{
-        loader: "file-loader",
-        options: {
-          name: "[name].css",
-          emitFile: true
-        }
-      }, {
-        loader: 'extract-loader'
-      }, */{
-        loader: 'style-loader'
-      }, {
-        loader: "css-loader",
-        options: {
-          sourceMap: true
-        }
-      }]
+      use: cssLoaders
     }, {
       test: /\/.*\.(jpe?g|gif|png)(\?[a-z0-9=\.]*)?$/,
       loader: 'file-loader',
       options: {
+        useRelativePath: true,
         name: '[path][name].[ext]',
         emitFile: true
       }
     }, {
-      test: /\.(png|jpg|gif|eot|ttf|woff|woff2)$/,
+      test: /\.(png|jpg|gif|eot|ttf|woff|woff2|svg)$/,
       loader: 'file-loader',
       options: {
-        name: '[path][name].[ext]',
+        //regExp: /^.*\/node_modules/,
+        //useRelativePath: true,
+        publicPath: '/',
+        name: '[hash].[ext]',
         emitFile: true
       }
-    }, {
-      test: /\.svg/,
-      use: {
-        loader: 'svg-url-loader',
-        options: {},
-      },
     }]
+  },
+  resolve: {
+    modules: [
+      path.resolve(__dirname, '../../node_modules'),
+      path.resolve(__dirname, 'node_modules'),
+      __dirname,
+    ]
   }
 };

@@ -53,7 +53,7 @@
   padding: 1rem 0;
 }
 
-.ld-Frame h1 {
+.ld-Frame h1:not(.ld-Frame-external h1) {
   font-size: 2em;
   margin: 0.67em 0;
 }

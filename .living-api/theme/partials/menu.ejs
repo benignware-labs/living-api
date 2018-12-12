@@ -1,20 +1,20 @@
 <% if (items.length) { %>
-<nav class="ld-menu ld-menu-level-<%= level %>">
+<nav class="ld-Menu ld-Menu-level-<%= level %>">
   <% items.forEach((item, index) => { %>
-    <div class="ld-menu-item<%= item.items.length ? ' ld-dropdown' : '' %>">
+    <div class="ld-Menu-item<%= item.items.length ? ' ld-Dropdown' : '' %>">
       <% if (item.items.length) { %>
-        <input class="ld-dropdown-toggle" type="checkbox" id="cb-<%= `${level}-${index}` %>">
-        <label class="ld-dropdown-label" for="cb-<%= `${level}-${index}` %>">
+        <input class="ld-Dropdown-toggle" type="checkbox" id="cb-<%= `${level}-${index}` %>">
+        <label class="ld-Dropdown-label" for="cb-<%= `${level}-${index}` %>">
       <% } %>
-        <a class="ld-menu-link"<% if (item.url) { %> href="<%= item.url %>"<% } %>>
+        <a class="ld-Menu-link"<% if (item.url) { %> href="<%= item.url %>"<% } %>>
           <%= item.label %>
           <% if (item.items.length) { %>
-            <i class="ld-dropdown-chevron fas fa-chevron-right"></i>
+            <i class="ld-Dropdown-chevron Icon--chevron"></i>
           <% } %>
         </a>
       <% if (item.items.length) { %>
         </label>
-        <div class="ld-dropdown-content">
+        <div class="ld-Dropdown-content">
           <%- include('menu', { items: item.items, level: level + 1 }); %>
         </div>
       <% } %>

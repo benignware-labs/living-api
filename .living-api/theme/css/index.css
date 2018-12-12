@@ -1,7 +1,6 @@
-@import '~@fortawesome/fontawesome-free/css/all.css';
-
-@import './layout.css';
-@import './dropdown.css';
-@import './menu.css';
-@import './frame.css';
-/*@import './treeview.css';*/
+@import './Container.css';
+@import './Dropdown.css';
+@import './Frame.css';
+@import './Icon.css';
+@import './Menu.css';
+@import './Navbar.css';

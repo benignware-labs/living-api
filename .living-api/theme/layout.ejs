@@ -2,45 +2,27 @@
   <head>
     <base href="/"/>
     <script src="/theme.js"></script>
-    <style>
-
-      body {
-        font-family: 'Helvetica', Arial;
-        font-weight: 300;
-      }
-
-      h1 {
-        font-weight: 300;
-        font-size: 2.5rem;
-      }
-
-      h2 {
-        font-weight: 300;
-        font-size: 1.5rem;
-      }
-
-      a:link,
-      a:visited {
-        color: darkgray;
-      }
-    </style>
     <title><%= config.title %></title>
+    <meta name="turbolinks-cache-control" content="no-cache">
   </head>
-  <body>
-    <header class="ld-header">
+  <body class="ld-Frame">
+    <header class="ld-Frame-header">
       <%- include('partials/navbar', { items: tree.items, config }); %>
     </header>
-    <main class="ld-main">
-      <aside id="ld-sidebar" class="ld-sidebar" data-turbolinks-permanent>
-        <div class="ld-treeview">
-          <%- include('partials/menu', { items: config.navigation.items, config, level: 0 }); %>
-        </div>
+    <main class="ld-Frame ld-Frame-main">
+      <aside id="ld-sidebar" class="ld-Frame-sidebar" data-turbolinks-permanent>
+        <%- include('partials/menu', { items: config.navigation.items, config, level: 0 }); %>
       </aside>
-      <div class="ld-container">
-        <article class="ld-content">
-          <%- content %>
-        </article>
+      <div class="ld-Frame-content">
+        <div class="ld-Container">
+          <article>
+            <%- content %>
+          </article>
+        </div>
       </div>
     </main>
   </body>
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=PT+Sans');
+  </style>
 </html>

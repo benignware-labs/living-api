@@ -1,0 +1,9 @@
+.Icon--chevron:before {
+  content: '';
+  display: inline-flex;
+  border-left: 0.25em solid transparent;
+  border-right: 0.25em solid transparent;
+  border-top: 0.375em solid currentColor;
+  font-size: 150%;
+  transform: rotate(-90deg);
+}

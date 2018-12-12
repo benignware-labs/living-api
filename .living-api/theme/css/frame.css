@@ -1,4 +1,75 @@
-.ld-frame {
-  font-family: 'Helvetica', Arial;
+.ld-Frame {
+  /*font-family: 'Helvetica', Arial;*/
+  font-family: 'PT Sans', sans-serif;
   font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+}
+
+.ld-Frame * {
+  box-sizing: border-box;
+}
+
+.ld-Frame-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  box-sizing: border-box;
+}
+
+.ld-Frame-header + * {
+  margin-top: 56px;
+}
+
+.ld-Frame-sidebar {
+  /*font-family: Arial;*/
+  width: 320px;
+  position: fixed;
+  left: 0;
+  top: 56px;
+  bottom: 0;
+  overflow: auto;
+  border-right: 1px solid #dedede;
+  border-right: 1px solid #f5f6f8;
+  background: #fff;
+  box-sizing: border-box;
+  padding: 1rem 0.5rem;
+  font-family: 'PT Sans', sans-serif;
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+}
+
+.ld-Frame-sidebar + * {
+  /* transform: translateX(320px); */
+  margin-left: 320px;
+}
+
+.ld-Frame-sidebar .ld-Menu {
+  border: 0;
+}
+
+.ld-Frame-content {
+  padding: 1rem 0;
+}
+
+.ld-Frame h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+.ld-Frame h2 {
+
+}
+
+.ld-Frame h3 {
+
+}
+
+.ld-Frame h4 {
+
+}
+
+.ld-Frame p {
+
 }

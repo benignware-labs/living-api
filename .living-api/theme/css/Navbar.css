@@ -1,0 +1,30 @@
+.ld-Navbar {
+  padding: 0.7rem 1.5rem;
+  background: #000;
+  color: #fff;
+  height: 56px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.ld-Navbar-title:focus {
+  outline: none;
+}
+
+.ld-Navbar-title {
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  line-height: 24px;
+  box-sizing: border-box;
+  font-size: 1.3rem;
+  font-weight: 600;
+  position: relative;
+  font-family: 'PT Sans', sans-serif;
+}
+
+.ld-Navbar-title:link,
+.ld-Navbar-title:visited {
+  color: white;
+}

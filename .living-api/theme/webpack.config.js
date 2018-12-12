@@ -28,8 +28,6 @@ const cssLoaders = [
   }
 ];
 
-console.log('cssLoaders', cssLoaders);
-
 module.exports = {
   context,
   mode,
@@ -92,6 +90,7 @@ module.exports = {
   },
   resolve: {
     modules: [
+      'node_modules',
       path.resolve(__dirname, '../../node_modules'),
       path.resolve(__dirname, 'node_modules'),
       __dirname,

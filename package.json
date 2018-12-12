@@ -1,24 +1,27 @@
 {
   "name": "living-api",
+  "description": "Living Styleguide Generator",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
     "test": "mocha",
     "clean": "rm -rf tmp",
-    "build": "npm run clean && cross-env NODE_ENV=production ./bin/cli.js -o 'tmp'",
-    "watch": "./bin/cli.js -w",
-    "start": "./bin/cli.js -s"
+    "build": "npm run clean && cross-env NODE_ENV=production ./bin/living-api.js ./test/fixtures/src",
+    "watch": "./bin/living-api.js -w",
+    "start": "./bin/living-api.js ./test/fixtures/src -s"
   },
   "bin": {
-    "living-api": "./bin/cli.js"
+    "living-api": "./bin/living-api.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.6.0",
+    "autoprefixer": "^9.4.2",
     "classnames": "^2.2.6",
     "commander": "^2.19.0",
     "cross-env": "^5.2.0",
+    "deepmerge": "^3.0.0",
     "ejs": "^2.6.1",
     "escape-html": "^1.0.3",
     "expose-loader": "^0.7.5",
@@ -29,6 +32,8 @@
     "html-loader": "^0.5.5",
     "htmldom2": "^0.0.3",
     "loader-utils": "^1.1.0",
+    "merge": "^1.2.1",
+    "merge-deep": "^3.0.2",
     "showdown": "^1.9.0",
     "turbolinks": "^5.2.0",
     "uniqid": "^5.0.3",
@@ -51,6 +56,5 @@
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
     "svg-url-loader": "^2.3.2"
-  },
-  "description": ""
+  }
 }

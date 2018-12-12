@@ -6,6 +6,13 @@ module.exports = {
   output: path.join(process.cwd(), '/docs'),
   entry: '**/*.md',
   webpack: require('../webpack.config.js'),
+  theme: {
+    options: {
+      properties: {
+        primary: 'lightblue'
+      }
+    }
+  },
   navigation: {
     items: [
       {

@@ -6,8 +6,16 @@ module.exports = {
   publicPath: '/',
   output: path.resolve(process.cwd(), 'docs'),
   template: path.join(__dirname, 'template.ejs'),
-  theme: require('./theme'),
-  webpack: require('./webpack.config.js'),
+  theme: {
+    options: {
+      properties: {
+        primary: 'lightblue'
+      }
+    }
+  },
+  webpack: require(
+    path.resolve(__dirname, './webpack.config.js')
+  ),
   navigation: {
     items: [
     ]

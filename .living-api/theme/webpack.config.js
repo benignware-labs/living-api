@@ -4,43 +4,27 @@ const { sync: glob } = require('glob');
 const mode = process.env.NODE_ENV || 'development';
 const context = path.join(__dirname);
 
-const cssLoaders = [
-  ...(
-    mode === 'production'
-      ? [{
-          loader: "file-loader",
-          options: {
-            name: "[name].css",
-            emitFile: true
-          }
-        }, {
-          loader: 'extract-loader'
-        }]
-      : [{
-        loader: 'style-loader'
-      }]
-  ),
-  {
-    loader: "css-loader",
-    options: {
-      sourceMap: true
-    }
-  }
-];
+const entryFiles = glob(`{${[
+  '**/theme.js',
+  '**/index.css'
+].join(',')}}`, {
+  cwd: context,
+  ignore: ['node_modules/**/*.*'],
+  realpath: true
+});
 
-console.log('cssLoaders', cssLoaders);
+const cssLoaders = [{
+  loader: 'style-loader'
+}, {
+  loader: "css-loader",
+}];
+
+console.log('THEME ENTRIES', entryFiles);
 
 module.exports = {
   context,
   mode,
-  entry: glob(`{${[
-    '**/main.js',
-    '**/index.css'
-  ].join(',')}}`, {
-    cwd: context,
-    ignore: ['node_modules/**/*.*'],
-    realpath: true
-  }),
+  entry: entryFiles,
   module: {
     rules: [{
       test: require.resolve('turbolinks'),

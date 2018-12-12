@@ -1,12 +1,13 @@
-.ld-dropdown-toggle {
+.ld-Dropdown-toggle {
   display: none;
 }
 
-.ld-dropdown-label {
+.ld-Dropdown-label {
   display: flex;
   cursor: pointer;
 }
 
+/*
 .ld-dropdown-chevron {
   transform: rotate(0);
   transition: all 0.2s ease;
@@ -16,13 +17,14 @@
 .ld-dropdown-toggle:checked ~ .ld-dropdown-label .ld-dropdown-chevron {
   transform: rotate(90deg);
 }
+*/
 
-.ld-dropdown-toggle ~ .ld-dropdown-content {
+.ld-Dropdown-toggle ~ .ld-Dropdown-content {
   max-height: 0;
   transition: all 0.2s ease;
   overflow: hidden;
 }
 
-.ld-dropdown-toggle:checked ~ .ld-dropdown-content {
+.ld-Dropdown-toggle:checked ~ .ld-Dropdown-content {
   max-height: 100vh;
 }

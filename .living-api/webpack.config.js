@@ -4,12 +4,6 @@ const webpack = require('webpack');
 const webpackMerge = require('webpack-merge');
 const WebpackDevServer = require('webpack-dev-server');
 
-const getConfig = require('../lib/getConfig');
-
-const config = getConfig();
-
-const context = config.context || config.webpack && config.webpack.context || process.cwd();
-
 module.exports = {
   module: {
     rules: [{
@@ -28,7 +22,7 @@ module.exports = {
           //url: false
           //template: true
           //interpolate: 'require',
-          root: context,
+          //root: context,
           attrs: [
             'img:src',
             'link:href',

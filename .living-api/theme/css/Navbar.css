@@ -1,0 +1,16 @@
+.ld-Navbar-title:focus {
+  outline: none;
+}
+
+.ld-Navbar-title {
+  color: white;
+  text-decoration: none;
+  font-size: 24px;
+  line-height: 24px;
+  box-sizing: border-box;
+}
+
+.ld-Navbar-title:link,
+.ld-Navbar-title:visited {
+  color: white;
+}

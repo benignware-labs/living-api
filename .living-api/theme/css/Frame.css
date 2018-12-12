@@ -54,12 +54,13 @@
 }
 
 .ld-Frame h1:not(.ld-Frame-external h1) {
-  font-size: 2em;
-  margin: 0.67em 0;
+  font-size: 2rem;
+  margin: 0.5rem 0;
 }
 
-.ld-Frame h2 {
-
+.ld-Frame h2:not(.ld-Frame-external h2) {
+  font-size: 1.75rem;
+  margin: 0.25rem 0;
 }
 
 .ld-Frame h3 {

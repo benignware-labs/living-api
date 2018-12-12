@@ -7,20 +7,20 @@
   cursor: pointer;
 }
 
-.ld-dropdown-chevron {
+.ld-Dropdown-chevron {
   margin-left: auto;
   /*filter: brightness(40%);*/
   color: #ccc;
 }
 
 
-.ld-dropdown-chevron:before {
+.ld-Dropdown-chevron:before {
   transform: rotate(0);
   transition: all 0.2s ease;
   margin-left: auto;
 }
 
-.ld-dropdown-toggle:checked ~ .ld-dropdown-label .ld-dropdown-chevron:before {
+.ld-Dropdown-toggle:checked ~ .ld-Dropdown-label .ld-Dropdown-chevron:before {
   transform: rotate(0deg);
 }
 

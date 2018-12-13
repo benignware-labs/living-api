@@ -7,11 +7,11 @@
   </head>
   <body class="ld-Frame">
     <header class="ld-Frame-header">
-      <%- include('partials/navbar', { items: tree.items, config }); %>
+      <%- include('partials/navbar', { config }); %>
     </header>
     <main class="ld-Frame ld-Frame-main">
       <aside id="ld-sidebar" class="ld-Frame-sidebar" data-turbolinks-permanent>
-        <%- include('partials/menu', { items: config.navigation.items, config, level: 0 }); %>
+        <%- include('partials/navigation', { ...navigation, config, level: 0 }); %>
       </aside>
       <div class="ld-Frame-content">
         <div class="ld-Container">

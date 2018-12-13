@@ -9,10 +9,8 @@
 
 .ld-Dropdown-chevron {
   margin-left: auto;
-  /*filter: brightness(40%);*/
   color: #ccc;
 }
-
 
 .ld-Dropdown-chevron:before {
   transform: rotate(0);
@@ -20,10 +18,10 @@
   margin-left: auto;
 }
 
+.ld-Dropdown.is-open .ld-Dropdown-chevron:before,
 .ld-Dropdown-toggle:checked ~ .ld-Dropdown-label .ld-Dropdown-chevron:before {
   transform: rotate(0deg);
 }
-
 
 .ld-Dropdown-toggle ~ .ld-Dropdown-content {
   max-height: 0;
@@ -31,6 +29,7 @@
   overflow: hidden;
 }
 
-.ld-Dropdown-toggle:checked ~ .ld-Dropdown-content {
+.ld-Dropdown.is-open .ld-Dropdown-content,
+.ld-Dropdown-toggle:checked + .ld-Dropdown-label + .ld-Dropdown-content {
   max-height: 100vh;
 }

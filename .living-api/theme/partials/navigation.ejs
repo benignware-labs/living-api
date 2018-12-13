@@ -1,0 +1,41 @@
+<% if (items.length) { %>
+<nav class="ld-Menu ld-Accordion">
+  <% items.forEach((item, index) => { %>
+    <input
+      class="ld-Accordion-toggle"
+      type="radio"
+      name="<%= id %>"
+      id="<%= item.id %>"
+      <%= item.active ? 'checked' : '' %>
+    >
+    <label
+      class="ld-Accordion-label ld-Menu-item<%= item.active ? ' is-active' : '' %><%= item.items.length ? ' ld-Dropdown' : '' %>"
+      for="<%= item.id %>"
+    >
+      <% if (item.path) { %>
+        <a
+          data-url="<%= item.url %>"
+          class="ld-Menu-link<%= item.active ? ' is-active' : '' %>"
+          href="<%= item.url %>"
+        >
+      <% } else { %>
+        <span class="ld-Menu-link">
+      <% } %>
+        <%= item.label %>
+        <% if (item.items.length) { %>
+          <i class="ld-Accordion-chevron Icon--chevron"></i>
+        <% } %>
+      <% if (item.path) { %>
+        </a>
+      <% } else { %>
+        </span>
+      <% } %>
+    </label>
+    <% if (item.items.length) { %>
+      <div class="ld-Accordion-content" data-size="<%= item.items.length %>">
+        <%- include('navigation', { ...item }); %>
+      </div>
+    <% } %>
+  <% }) %>
+</nav>
+<% } %>

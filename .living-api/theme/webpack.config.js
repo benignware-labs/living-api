@@ -19,11 +19,26 @@ const cssLoaders = [
       : [{
         loader: 'style-loader'
       }]
-  ),
-  {
+  ), {
     loader: "css-loader",
     options: {
-      sourceMap: true
+      //sourceMap: true
+    }
+  }, {
+    loader: "postcss-loader",
+    options: {
+      /*importLoaders: 1,
+      ident: 'postcss',*/
+      config: {
+        path: path.resolve(__dirname)
+      }
+      /*plugins: {
+        'postcss-preset-env': {},
+        'postcss-import': {},
+        'postcss-for': {},
+        'cssnano': {},
+
+      }*/
     }
   }
 ];

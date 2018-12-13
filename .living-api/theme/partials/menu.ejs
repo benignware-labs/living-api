@@ -1,12 +1,21 @@
 <% if (items.length) { %>
 <nav class="ld-Menu ld-Menu-level-<%= level %>">
   <% items.forEach((item, index) => { %>
-    <div class="ld-Menu-item<%= item.items.length ? ' ld-Dropdown' : '' %>">
+    <input type="checkbox" name="<%= id %>"/>
+    <div
+      class="ld-Menu-item<%= item.active ? ' is-active' : '' %><%= item.items.length ? ' ld-Dropdown' : '' %>"
+      data-target="<%= item.id %>"
+    >
       <% if (item.items.length) { %>
-        <input class="ld-Dropdown-toggle" type="checkbox" id="cb-<%= `${level}-${index}` %>">
-        <label class="ld-Dropdown-label" for="cb-<%= `${level}-${index}` %>">
+        <input
+          class="ld-Dropdown-toggle"
+          type="checkbox"
+          id="<%= item.id %>"
+          <%= item.active ? 'checked' : '' %>
+        >
+        <label class="ld-Dropdown-label" for="<%= item.id %>">
       <% } %>
-        <a class="ld-Menu-link"<% if (item.url) { %> href="<%= item.url %>"<% } %>>
+        <a class="ld-Menu-link<%= item.active ? ' is-active' : '' %>"<% if (item.path) { %> href="<%= item.path %>"<% } %>>
           <%= item.label %>
           <% if (item.items.length) { %>
             <i class="ld-Dropdown-chevron Icon--chevron"></i>

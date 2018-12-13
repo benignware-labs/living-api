@@ -1,0 +1,43 @@
+.ld-Accordion-toggle {
+  display: none;
+}
+
+.ld-Accordion-label {
+  display: flex;
+  cursor: pointer;
+}
+
+.ld-Accordion-chevron {
+  margin-left: auto;
+  color: #ccc;
+}
+
+.ld-Accordion-chevron:before {
+  transform: rotate(0);
+  transition: max-height .2s ease-in-out;
+  margin-left: auto;
+}
+
+.ld-Accordion.is-open .ld-Accordion-chevron:before,
+.ld-Accordion-toggle:checked + .ld-Accordion-label .ld-Accordion-chevron:before {
+  transform: rotate(0deg);
+}
+
+.ld-Accordion-content {
+  max-height: 0;
+  transition: max-height .2s ease-in-out;
+  overflow: hidden;
+}
+
+.ld-Accordion.is-open .ld-Accordion-content,
+.ld-Accordion-toggle:checked + .ld-Accordion-label + .ld-Accordion-content {
+  max-height: 50vh;
+  transition: max-height .2s ease-in-out;
+}
+
+@for $i from 1 to 25 {
+  .ld-Accordion-toggle:checked + .ld-Accordion-label + .ld-Accordion-content[data-size='$(i)'] {
+    max-height: calc($(i) * 35px);
+    transition: max-height .2s ease-in-out;
+  }
+}

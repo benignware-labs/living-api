@@ -18,7 +18,8 @@ module.exports = {
         loader: "file-loader",
         options: {
           name: "[path][name].html",
-          emitFile: true
+          emitFile: true,
+          relativePath: true,
         }
       }, {
         loader: 'extract-loader',
@@ -28,7 +29,8 @@ module.exports = {
           //url: false
           //template: true
           //interpolate: 'require',
-          root: context,
+          //root: context,
+
           attrs: [
             'img:src',
             'link:href',

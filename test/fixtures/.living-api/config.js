@@ -1,7 +1,7 @@
 const path = require('path');
 
 module.exports = {
-  title: 'LIGHTELLIGENCE® UI',
+  title: 'Awesome App',
   context: path.join(__dirname, '../src'),
   output: path.join(process.cwd(), '/docs'),
   entry: '**/*.md',
@@ -10,16 +10,23 @@ module.exports = {
     items: [
       {
         label: 'Index',
-        url: '/',
-        items: []
+        path: 'index.html',
       },
       {
         label: 'Components',
         items: [
           {
             label: 'Button',
-            url: '/scss/components/Button/Button.html',
-            items: []
+            path: 'scss/components/Button/Button.html',
+          },
+        ]
+      },
+      {
+        label: 'Controls',
+        items: [
+          {
+            label: 'TextField',
+            path: 'scss/controls/TextField/TextField.html',
           },
         ]
       }

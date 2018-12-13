@@ -10,13 +10,15 @@ if (turbolinks && (!turbolinks.controller || !turbolinks.controller.started)) {
 function updateTargets(nextDocument, selector, callback) {
   selector = `${selector}[data-target]`;
 
+  const nodes = [ ...nextDocument.querySelectorAll(selector) ];
+
   // Create a map of targets
   const nextTargets = Object.assign(
     {},
-    ...[ ...nextDocument.querySelectorAll(selector) ].map(target => ({
+    ...nodes.map(target => ({
       [target.getAttribute('data-target')]: target
     }))
-  )
+  );
 
   // Update targets
   [ ...document.querySelectorAll(selector) ]

@@ -1,7 +1,7 @@
 const path = require('path');
 
 module.exports = {
-  title: 'LIGHTELLIGENCE® UI',
+  title: 'Styleguide',
   context: path.join(__dirname, '../src'),
   output: path.join(process.cwd(), '/docs'),
   entry: '**/*.md',

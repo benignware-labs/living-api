@@ -1,10 +1,43 @@
-.ld-Accordion-toggle {
-  display: none;
+.ld-Accordion {
+  /*display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;*/
+  font-size: 14px;
 }
 
-.ld-Accordion-label {
-  display: flex;
+.ld-Accordion .ld-Accordion-content {
+  padding-left: 1rem;
+}
+
+.ld-Accordion > input[data-ui] {
+  display: none;
+
+}
+
+.ld-Accordion-header {
+  /*display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: space-between;*/
   cursor: pointer;
+
+  height: 28px;
+  display: block;
+}
+
+.ld-Accordion-header > * {
+  padding: 0;
+  border: 0;
+  color: inherit;
+  text-decoration: none;
+  /*display: flex;
+  flex-basis: 100%;*/
+  display: flex;
+  padding: 0.5rem 1rem;
+}
+
+.ld-Accordion-header.is-active {
+  color: #f60;
 }
 
 .ld-Accordion-chevron {
@@ -12,32 +45,41 @@
   color: #ccc;
 }
 
+.ld-Accordion-header > a:link,
+.ld-Accordion-header > a:visited {
+  color: inherit;
+}
+
 .ld-Accordion-chevron:before {
   transform: rotate(0);
-  transition: max-height .2s ease-in-out;
+  transition: transform .4s ease-in-out;
   margin-left: auto;
 }
 
 .ld-Accordion.is-open .ld-Accordion-chevron:before,
-.ld-Accordion-toggle:checked + .ld-Accordion-label .ld-Accordion-chevron:before {
+input[data-ui]:checked + .ld-Accordion-header .ld-Accordion-chevron:before {
   transform: rotate(0deg);
+}
+
+input[data-ui][data-href] + .ld-Accordion-header {
+  font-weight: bold;
 }
 
 .ld-Accordion-content {
   max-height: 0;
-  transition: max-height .2s ease-in-out;
+  transition: max-height .4s ease-in-out;
   overflow: hidden;
 }
 
 .ld-Accordion.is-open .ld-Accordion-content,
-.ld-Accordion-toggle:checked + .ld-Accordion-label + .ld-Accordion-content {
+input[data-ui]:checked + .ld-Accordion-header + .ld-Accordion-content {
   max-height: 50vh;
-  transition: max-height .2s ease-in-out;
+  transition: max-height .4s ease-in-out;
 }
 
 @for $i from 1 to 25 {
-  .ld-Accordion-toggle:checked + .ld-Accordion-label + .ld-Accordion-content[data-size='$(i)'] {
+  input[data-ui]:checked + .ld-Accordion-header + .ld-Accordion-content[data-size='$(i)'] {
     max-height: calc($(i) * 35px);
-    transition: max-height .2s ease-in-out;
+    transition: max-height .4s ease-in-out;
   }
 }

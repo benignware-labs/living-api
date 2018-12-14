@@ -19,6 +19,10 @@ module.exports = {
             label: 'Button',
             path: 'scss/components/Button/Button.html',
           },
+          {
+            label: 'Card',
+            path: 'scss/components/Card/Card.html',
+          },
         ]
       },
       {

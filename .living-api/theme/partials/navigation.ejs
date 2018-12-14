@@ -1,41 +1,36 @@
 <% if (items.length) { %>
-<nav class="ld-Menu ld-Accordion">
+<nav class="ld-Accordion">
   <% items.forEach((item, index) => { %>
     <input
-      class="ld-Accordion-toggle"
+      data-ui
       type="radio"
-      name="<%= id %>"
-      id="<%= item.id %>"
-      <%= item.active ? 'checked' : '' %>
-    >
-    <label
-      class="ld-Accordion-label ld-Menu-item<%= item.active ? ' is-active' : '' %><%= item.items.length ? ' ld-Dropdown' : '' %>"
-      for="<%= item.id %>"
-    >
-      <% if (item.path) { %>
-        <a
-          data-url="<%= item.url %>"
-          class="ld-Menu-link<%= item.active ? ' is-active' : '' %>"
-          href="<%= item.url %>"
-        >
-      <% } else { %>
-        <span class="ld-Menu-link">
+      name="<%- id %>"
+      id="<%- item.id %>"
+      data-path="<%= item.path %>"
+      <% if (item.url) { %>
+        data-href="<%= item.url %>"
       <% } %>
+      <%= item.active ? 'checked' : '' %>
+    />
+    <label
+      data-ui
+      for="<%- item.id %>"
+      class="ld-Accordion-header<%= item.url && item.active ? ' is-active' : '' %>"
+    >
+      <<%- item.url ? 'span' : 'span' %>
+        <% if (item.url) { %>
+          href="<%= item.url %>"
+        <% } %>
+      >
         <%= item.label %>
         <% if (item.items.length) { %>
-          <i class="ld-Accordion-chevron Icon--chevron"></i>
+          <i class="ld-Accordion-chevron ld-Icon" data-icon="chevron"></i>
         <% } %>
-      <% if (item.path) { %>
-        </a>
-      <% } else { %>
-        </span>
-      <% } %>
+      </<%- item.url ? 'span' : 'span' %>>
     </label>
-    <% if (item.items.length) { %>
-      <div class="ld-Accordion-content" data-size="<%= item.items.length %>">
-        <%- include('navigation', { ...item }); %>
-      </div>
-    <% } %>
+    <div class="ld-Accordion-content" data-size="<%= item.items.length %>">
+      <%- include('navigation', { ...item, level: level + 1 }); %>
+    </div>
   <% }) %>
 </nav>
 <% } %>

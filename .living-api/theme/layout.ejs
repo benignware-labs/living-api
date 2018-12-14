@@ -1,31 +1,32 @@
 <!DOCTYPE html>
-<html>
+<html class="ld-Frame">
   <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="turbolinks-cache-control" content="no-cache">
-    <base href="/"/>
-    <script src="/theme.js"></script>
+    <base href="<%- config.publicPath %>"/>
+    <script src="/theme.js" defer data-turbolinks-eval="false"></script>
     <title><%- config.title %></title>
+    <style>
+      @import url('https://fonts.googleapis.com/css?family=PT+Sans');
+    </style>
   </head>
-  <body class="ld-Frame">
-    <header class="ld-Frame-header">
+  <body class="ld-Frame-body">
+    <header data-chrome="top" class="ld-Frame-header">
       <%- include('partials/navbar', { config }); %>
     </header>
-    <main class="ld-Frame ld-Frame-main">
-      <aside id="ld-sidebar" class="ld-Frame-sidebar" data-turbolinks-permanent>
-        <%- include('partials/navigation', { ...navigation, config, level: 0 }); %>
-      </aside>
-      <div class="ld-Frame-content">
-        <div class="ld-Container">
-          <article>
-            <%- content %>
-          </article>
-        </div>
+    <aside data-chrome="left" class="ld-Frame-sidebar">
+      <%- include('partials/navigation', { ...navigation, config, level: 0 }); %>
+    </aside>
+    <main>
+      <div class="ld-Container">
+        <pre>
+            <!--<%- JSON.stringify(navigation, null, 2) %>-->
+        </pre>
+        <article>
+          <%- content %>
+        </article>
       </div>
     </main>
   </body>
-  <style>
-    @import url('https://fonts.googleapis.com/css?family=PT+Sans');
-  </style>
 </html>

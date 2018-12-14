@@ -1,4 +1,8 @@
-.Icon--chevron:before {
+.ld-Icon {
+}
+
+
+.ld-Icon[data-icon='chevron']:before {
   content: '';
   display: inline-flex;
   border-left: 0.25em solid transparent;

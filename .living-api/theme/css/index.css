@@ -5,3 +5,9 @@
 @import './Icon.css';
 @import './Menu.css';
 @import './Navbar.css';
+
+
+.turbolinks-progress-bar {
+  height: 5px;
+  background-color: white;
+}

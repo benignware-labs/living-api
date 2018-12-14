@@ -3,7 +3,7 @@ const path = require('path');
 module.exports = {
   title: 'Styleguide',
   entry: '**/*.md',
-  publicPath: '/',
+  publicPath: '',
   output: path.resolve(process.cwd(), 'docs'),
   template: path.join(__dirname, 'template.ejs'),
   theme: require('./theme'),

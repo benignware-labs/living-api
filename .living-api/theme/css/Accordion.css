@@ -65,6 +65,10 @@ input[data-ui][data-href] + .ld-Accordion-header {
   font-weight: bold;
 }
 
+input[data-ui][data-href] + .ld-Accordion-header.is-active {
+  color: #f60;
+}
+
 .ld-Accordion-content {
   max-height: 0;
   transition: max-height .4s ease-in-out;

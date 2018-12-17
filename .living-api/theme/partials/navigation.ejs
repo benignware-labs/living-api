@@ -1,6 +1,6 @@
-<% if (items.length) { %>
+<% if (children.length) { %>
 <nav class="ld-Accordion">
-  <% items.forEach((item, index) => { %>
+  <% children.forEach((item, index) => { %>
     <input
       data-ui
       type="radio"
@@ -10,25 +10,25 @@
       <% if (item.url) { %>
         data-href="<%= item.url %>"
       <% } %>
-      <%= item.active ? 'checked' : '' %>
+      <%= current.path.startsWith(item.path) ? 'checked' : '' %>
     />
     <label
       data-ui
       for="<%- item.id %>"
-      class="ld-Accordion-header<%= item.url && item.active ? ' is-active' : '' %>"
+      class="ld-Accordion-header<%= item.url === current.url ? ' is-active' : '' %>"
     >
       <<%- item.url ? 'span' : 'span' %>
         <% if (item.url) { %>
-          href="<%= item.url %>"
+          data-href="<%= item.url %>"
         <% } %>
       >
         <%= item.label %>
-        <% if (item.items.length) { %>
+        <% if (item.children.length) { %>
           <i class="ld-Accordion-chevron ld-Icon" data-icon="chevron"></i>
         <% } %>
       </<%- item.url ? 'span' : 'span' %>>
     </label>
-    <div class="ld-Accordion-content" data-size="<%= item.items.length %>">
+    <div class="ld-Accordion-content" data-size="<%= item.children.length %>">
       <%- include('navigation', { ...item, level: level + 1 }); %>
     </div>
   <% }) %>

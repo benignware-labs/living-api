@@ -2,38 +2,17 @@ const path = require('path');
 
 module.exports = {
   title: 'Styleguide',
-  context: path.join(__dirname, '../src'),
+  context: path.join(__dirname, '..'),
   output: path.join(process.cwd(), '/docs'),
-  entry: '**/*.md',
+  publicPath: '/',
   webpack: require('../webpack.config.js'),
-  navigation: {
-    items: [
-      {
-        label: 'Index',
-        path: 'index.html',
-      },
-      {
-        label: 'Components',
-        items: [
-          {
-            label: 'Button',
-            path: 'scss/components/Button/Button.html',
-          },
-          {
-            label: 'Card',
-            path: 'scss/components/Card/Card.html',
-          },
-        ]
-      },
-      {
-        label: 'Controls',
-        items: [
-          {
-            label: 'TextField',
-            path: 'scss/controls/TextField/TextField.html',
-          },
-        ]
-      }
-    ]
+  index: 'README.md',
+  contents: {
+    'Getting started': 'src/index.md',
+    components: {
+      title: 'Components',
+      contents: '**/components/**/*.md',
+    },
+    controls: '**/controls/**/*.md'
   }
 }

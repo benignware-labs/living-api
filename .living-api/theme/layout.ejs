@@ -16,13 +16,11 @@
       <%- include('partials/navbar', { config }); %>
     </header>
     <aside data-chrome="left" class="ld-Frame-sidebar">
-      <%- include('partials/navigation', { ...navigation, config, level: 0 }); %>
+      <%= current.url %>
+      <%- include('partials/navigation', { ...navigation, config, current, level: 0 }); %>
     </aside>
     <main>
       <div class="ld-Container">
-        <pre>
-            <!--<%- JSON.stringify(navigation, null, 2) %>-->
-        </pre>
         <article>
           <%- content %>
         </article>

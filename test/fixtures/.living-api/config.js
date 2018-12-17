@@ -7,6 +7,7 @@ module.exports = {
   publicPath: '/',
   webpack: require('../webpack.config.js'),
   index: 'README.md',
+  ignore: '**/Card.md',
   contents: {
     'Getting started': 'src/index.md',
     components: {

@@ -1,6 +1,7 @@
 {
   "name": "living-api",
-  "version": "1.0.0",
+  "description": "Living Styleguide Generator",
+  "version": "0.1.0-alpha.14",
   "main": "index.js",
   "scripts": {
     "test": "mocha",
@@ -28,6 +29,7 @@
     "highlight.js": "^9.13.1",
     "html-loader": "^0.5.5",
     "htmldom2": "^0.0.3",
+    "humanize-string": "^1.0.2",
     "humps": "^2.0.1",
     "i": "^0.3.6",
     "is-plain-object": "^2.0.4",
@@ -56,13 +58,11 @@
     "@babel/preset-env": "^7.1.6",
     "babel-loader": "^8.0.4",
     "css-loader": "^1.0.1",
-    "humanize-string": "^1.0.2",
     "markdown-loader": "^4.0.0",
     "mocha": "^5.2.0",
     "node-sass": "^4.10.0",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
     "svg-url-loader": "^2.3.2"
-  },
-  "description": ""
+  }
 }

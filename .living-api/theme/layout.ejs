@@ -16,7 +16,6 @@
       <%- include('partials/navbar', { config }); %>
     </header>
     <aside data-chrome="left" class="ld-Frame-sidebar">
-      <%= current.url %>
       <%- include('partials/navigation', { ...navigation, config, current, level: 0 }); %>
     </aside>
     <main>

@@ -17,10 +17,10 @@
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "https://github.com/benignware/varss.git"
+    "url": "https://github.com/benignware-labs/living-api.git"
   },
   "bugs": {
-    "url": "https://github.com/benignware/varss/issues"
+    "url": "https://github.com/benignware-labs/living-api/issues"
   },
   "dependencies": {
     "classnames": "^2.2.6",

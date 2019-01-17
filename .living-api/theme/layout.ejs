@@ -7,6 +7,22 @@
     <base href="<%- config.publicPath %>"/>
     <script src="/theme.js" defer data-turbolinks-eval="false"></script>
     <title><%- config.title %></title>
+    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/2.10.0/github-markdown.min.css"/>-->
+    <!--<style>
+    	.markdown-body {
+    		box-sizing: border-box;
+    		min-width: 200px;
+    		max-width: 980px;
+    		margin: 0 auto;
+    		padding: 45px;
+    	}
+
+    	@media (max-width: 767px) {
+    		.markdown-body {
+    			padding: 15px;
+    		}
+    	}
+    </style>-->
     <style>
       @import url('https://fonts.googleapis.com/css?family=PT+Sans');
     </style>
@@ -20,9 +36,9 @@
     </aside>
     <main>
       <div class="ld-Container">
-        <article>
+        <div class="markdown-body">
           <%- content %>
-        </article>
+        </div>
       </div>
     </main>
   </body>

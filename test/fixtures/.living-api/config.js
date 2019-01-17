@@ -14,6 +14,7 @@ module.exports = {
       title: 'Components',
       contents: '**/components/**/*.md',
     },
+    content: '**/content/**/*.md',
     controls: '**/controls/**/*.md'
   }
 }

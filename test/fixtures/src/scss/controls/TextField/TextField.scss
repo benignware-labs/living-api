@@ -1,3 +1,7 @@
-input[type='text'] {
-  
+.TextField {
+  -webkit-appearance: none;
+  border: 1px solid orange;
+  background: peachpuff;
+  color: black;
+  padding: 0.25rem 0.4rem;
 }

@@ -3,5 +3,5 @@
 Here's a textfield example
 
 ```html
-<input type="text" placeholder="Enter your stuff here"/>
+<input class="TextField" type="text" placeholder="Enter your stuff here"/>
 ```

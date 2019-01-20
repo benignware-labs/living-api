@@ -47,6 +47,7 @@ Here comes the rest
 
 ## Tables
 
+
 |       Name | Extra small |  Small | Medium |  Large | Extra large |
 |-----------:|:-----------:|:------:|:------:|:------:|:-----------:|
 | Breakpoint |    <576px   | ≥576px | ≥768px | ≥992px |   ≥1200px   |

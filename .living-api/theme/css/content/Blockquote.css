@@ -1,0 +1,19 @@
+.ld-Blockquote {
+  margin-left: 0;
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.ld-Blockquote {
+  padding: 0 1em;
+  color: #6a737d;
+  border-left: 0.25em solid #dfe2e5;
+}
+
+.ld-Blockquote > :first-child {
+  margin-top: 0;
+}
+
+.ld-Blockquote > :last-child {
+  margin-bottom: 0;
+}

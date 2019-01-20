@@ -6,7 +6,8 @@
 @import './components/Menu.css';
 @import './components/Navbar.css';
 
-@import './markdown';
+@import './content/Table';
+@import './content/Blockquote';
 
 .turbolinks-progress-bar {
   height: 5px;

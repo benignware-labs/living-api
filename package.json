@@ -8,7 +8,9 @@
     "clean": "rm -rf tmp",
     "build": "./bin/cli.js -o 'tmp'",
     "watch": "./bin/cli.js -w",
-    "start": "./bin/cli.js -s"
+    "start": "./bin/cli.js -s",
+    "test:build": "cd test/fixtures && webpack",
+    "test:start": "cd test/fixtures && webpack-dev-server"
   },
   "bin": {
     "living-api": "./bin/cli.js"
@@ -58,11 +60,13 @@
     "webpack-merge": "^4.1.4"
   },
   "devDependencies": {
-    "@babel/core": "^7.1.6",
+    "@babel/core": "^7.2.2",
     "@babel/plugin-transform-spread": "^7.0.0",
-    "@babel/preset-env": "^7.1.6",
-    "babel-loader": "^8.0.4",
+    "@babel/polyfill": "^7.2.5",
+    "@babel/preset-env": "^7.3.1",
+    "babel-loader": "^8.0.5",
     "css-loader": "^1.0.1",
+    "html-webpack-plugin": "^3.2.0",
     "markdown-loader": "^4.0.0",
     "mocha": "^5.2.0",
     "node-sass": "^4.10.0",

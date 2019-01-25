@@ -3,12 +3,14 @@ const { sync: glob } = require('glob');
 
 const context = path.join(__dirname, 'src');
 
-module.exports = {
-  context,
-  mode: 'development',
-  entry: glob(`{${[
+console.log('hello webpack', context);
+
+const entry = [
+  //'@babel/polyfill',
+  ...glob(`{${[
     //'**/*.svg',
-    '**/main.js',
+    'js/main.js',
+    '**/*.html',
     '**/index.scss',
     '**/*.svg'
   ].join(',')}}`, {
@@ -16,9 +18,57 @@ module.exports = {
     ignore: ['node_modules/**/*.*'],
     realpath: true,
     //absolute: true
-  }),
+  })
+];
+
+console.log('entry...', entry);
+
+module.exports = {
+  context,
+  mode: 'development',
+  entry,
   module: {
     rules: [{
+      test: /\.html/,
+      use: [{
+        loader: "file-loader",
+        options: {
+          name: "[name].html",
+          emitFile: true
+        }
+      }, {
+        loader: 'extract-loader',
+      }, {
+        loader: 'html-loader',
+        options: {
+          interpolate: true,
+          attrs: [
+            'img:src',
+            'link:href',
+            'script:src',
+            'include:src'
+          ]
+        }
+      }, {
+        loader: 'babel-loader',
+        options: {
+          presets: [
+            [
+              '@babel/preset-env',
+              {
+                useBuiltIns: 'entry',
+                "targets": {
+                  "esmodules": true
+                }
+              }
+            ]
+          ],
+          plugins: [
+            '@babel/plugin-transform-spread'
+          ]
+        }
+      }]
+    }, {
       test: /\.js$/,
       // exclude: /(node_modules|bower_components)\/jquery/,
       use: {
@@ -26,15 +76,17 @@ module.exports = {
         options: {
           presets: [
             [
-              "@babel/preset-env", {
+              '@babel/preset-env',
+              {
+                useBuiltIns: 'entry',
                 "targets": {
-                  "browsers": ["last 2 versions", "safari >= 7"]
+                  "esmodules": true
                 }
               }
             ]
           ],
           plugins: [
-            "@babel/plugin-transform-spread"
+            '@babel/plugin-transform-spread'
           ]
         }
       }
@@ -83,13 +135,7 @@ module.exports = {
         loader: 'svg-url-loader',
         options: {},
       },
-    },/* {
-      test: /\.html/,
-      use: {
-        loader: 'html-loader',
-        options: {},
-      },
-    }*/]
+    }]
   },
   optimization: {
     splitChunks: {
@@ -107,6 +153,19 @@ module.exports = {
           priority: 10
         }
       }
+    }
+  },
+  devServer: {
+    index: 'index.html',
+    open: true,
+    //hot: true,
+    inline: true,
+    port: 8080,
+    historyApiFallback: true,
+    //contentBase: path.join(process.cwd(), 'src'),
+    contentBase: './dist',
+    stats: {
+      colors: true
     }
   }
 };

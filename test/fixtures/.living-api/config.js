@@ -7,14 +7,14 @@ module.exports = {
   publicPath: '/',
   webpack: require('../webpack.config.js'),
   index: 'README.md',
-  ignore: '**/Card.md',
+  ignore: '**/Ignored.md',
   contents: {
     'Getting started': 'src/index.md',
     components: {
       title: 'Components',
-      contents: '**/components/**/*.md',
+      contents: '**/components/*/*.md',
     },
-    content: '**/content/**/*.md',
-    controls: '**/controls/**/*.md'
+    content: '**/content/*/*.md',
+    controls: '**/controls/*/*.md'
   }
 }

@@ -3,6 +3,9 @@
 /dist
 /docs
 
+# Test build files
+test/fixtures/dist
+
 # Log files
 npm-debug.log*
 yarn-debug.log*

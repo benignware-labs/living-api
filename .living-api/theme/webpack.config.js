@@ -6,19 +6,9 @@ const context = path.join(__dirname);
 
 const cssLoaders = [
   ...(
-    mode === 'production'
-      ? [{
-          loader: "file-loader",
-          options: {
-            name: "[name].css",
-            emitFile: true
-          }
-        }, {
-          loader: 'extract-loader'
-        }]
-      : [{
-        loader: 'style-loader'
-      }]
+    [{
+      loader: 'style-loader'
+    }]
   ), {
     loader: "css-loader",
     options: {

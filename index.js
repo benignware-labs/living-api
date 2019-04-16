@@ -1,4 +1,4 @@
-const { build, watch } = require('./lib/webpack');
+const { build, watch, start } = require('./lib/webpack');
 
 module.exports = {
   build,

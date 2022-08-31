@@ -3,8 +3,6 @@ const { sync: glob } = require('glob');
 
 const context = path.join(__dirname, 'src');
 
-console.log('hello webpack', context);
-
 const entry = [
   //'@babel/polyfill',
   ...glob(`{${[
@@ -17,11 +15,9 @@ const entry = [
     cwd: context,
     ignore: ['node_modules/**/*.*'],
     realpath: true,
-    //absolute: true
+    // absolute: true
   })
 ];
-
-console.log('entry...', entry);
 
 module.exports = {
   context,
@@ -139,7 +135,7 @@ module.exports = {
       },
     }]
   },
-  optimization: {
+  /*optimization: {
     splitChunks: {
       cacheGroups: {
         commons: {
@@ -169,5 +165,5 @@ module.exports = {
     stats: {
       colors: true
     }
-  }
+  }*/
 };

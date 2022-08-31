@@ -1,5 +1,4 @@
 const path = require('path');
-const { pascalize } = require('humps');
 
 module.exports = {
   layout: path.resolve(__dirname, 'layout.ejs'),

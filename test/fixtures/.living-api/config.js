@@ -12,7 +12,7 @@ module.exports = {
     'Getting started': 'src/index.md',
     components: {
       title: 'Components',
-      contents: '**/components/*/*.md',
+      contents: '**/components/Counter/*.md',
     },
     content: '**/content/*/*.md',
     controls: '**/controls/*/*.md'

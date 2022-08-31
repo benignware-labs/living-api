@@ -11,7 +11,6 @@
 
 .ld-Accordion > input[data-ui] {
   display: none;
-
 }
 
 .ld-Accordion-header {
@@ -20,7 +19,7 @@
   align-items: stretch;
   justify-content: space-between;*/
   cursor: pointer;
-
+  color: var(--ld-link-color);
   height: 28px;
   display: block;
 }
@@ -37,7 +36,7 @@
 }
 
 .ld-Accordion-header.is-active {
-  color: #f60;
+  color: var(--ld-link-active-color);
 }
 
 .ld-Accordion-chevron {
@@ -66,7 +65,7 @@ input[data-ui][data-href] + .ld-Accordion-header {
 }
 
 input[data-ui][data-href] + .ld-Accordion-header.is-active {
-  color: #f60;
+  color: var(--ld-primary);
 }
 
 .ld-Accordion-content {

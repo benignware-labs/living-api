@@ -34,12 +34,11 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  /* border-left: 2px solid transparent; */
 }
 
 .ld-Menu-link.is-active {
-  color: #f60;
-  border-color: #f60;
+  color: var(--ld-link-active-color);
+  border-color: var(--ld-link-active-color);
 }
 
 .ld-Menu-level-0 > .ld-Menu-link + .ld-Menu-link {

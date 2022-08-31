@@ -1,4 +1,4 @@
-import turbolinks from 'turbolinks';
+// import turbolinks from 'turbolinks';
 //import 'highlight.js/styles/solarized-dark.css';
 import 'highlight.js/styles/atom-one-dark-reasonable.css';
 
@@ -12,13 +12,18 @@ window.addEventListener('click', (event) => {
     const href = `${target.getAttribute('data-href')}`;
 
     if (href !== window.location.pathname) {
-      Turbolinks.visit(href);
+      if (typeof Turbolinks !== 'undefined') {
+        Turbolinks.visit(href);
+      } else {
+        window.location.href = href;
+      }
     }
   }
 
   event.stopPropagation();
 });
 
+/*
 if (turbolinks && (!turbolinks.controller || !turbolinks.controller.started)) {
   turbolinks.start();
 }
@@ -40,3 +45,4 @@ document.addEventListener('turbolinks:before-render', function(event) {
     element.parentNode.removeChild(element);
   });
 });
+*/

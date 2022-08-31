@@ -4,31 +4,17 @@ const { sync: glob } = require('glob');
 const mode = process.env.NODE_ENV || 'development';
 const context = path.join(__dirname);
 
+// const useTurbo = false;
+
 const cssLoaders = [
   ...(
     [{
-      loader: 'style-loader'
+      loader: require.resolve('style-loader')
     }]
   ), {
-    loader: "css-loader",
+    loader: require.resolve('css-loader'),
     options: {
       //sourceMap: true
-    }
-  }, {
-    loader: "postcss-loader",
-    options: {
-      /*importLoaders: 1,
-      ident: 'postcss',*/
-      config: {
-        path: path.resolve(__dirname)
-      }
-      /*plugins: {
-        'postcss-preset-env': {},
-        'postcss-import': {},
-        'postcss-for': {},
-        'cssnano': {},
-
-      }*/
     }
   }
 ];
@@ -45,13 +31,13 @@ module.exports = {
     realpath: true
   }),
   module: {
-    rules: [{
+    rules: [/*{
       test: require.resolve('turbolinks'),
       use: [{
         loader: 'expose-loader',
         options: 'Turbolinks'
       }]
-    }, {
+    }*//*{
       test: /\.js$/,
       use: {
         loader: 'babel-loader',
@@ -73,12 +59,12 @@ module.exports = {
           ]
         }
       }
-    }, {
+    }, */{
       test: /\.css$/,
       use: cssLoaders
     }, {
       test: /\/.*\.(jpe?g|gif|png)(\?[a-z0-9=\.]*)?$/,
-      loader: 'file-loader',
+      loader: require.resolve('file-loader'),
       options: {
         useRelativePath: true,
         name: '[path][name].[ext]',
@@ -86,7 +72,7 @@ module.exports = {
       }
     }, {
       test: /\.(png|jpg|gif|eot|ttf|woff|woff2|svg)$/,
-      loader: 'file-loader',
+      loader: require.resolve('file-loader'),
       options: {
         //regExp: /^.*\/node_modules/,
         //useRelativePath: true,

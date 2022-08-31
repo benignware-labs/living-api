@@ -1,4 +1,2 @@
-//import './components/Counter/Counter';
+// import './components/Counter/Counter';
 
-
-console.log('hello main');

@@ -21,7 +21,7 @@
   font-size: 1.3rem;
   font-weight: 600;
   position: relative;
-  font-family: 'PT Sans', sans-serif;
+  font-family: var(--ld-font-family);
 }
 
 .ld-Navbar-title:link,

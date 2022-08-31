@@ -6,8 +6,8 @@ const { build, watch, start } = require('../lib/webpack');
 
 program
   .version('0.1.0')
-  .option('-o, --output <s>', 'Specify destination directory', './docs')
-  .option('-e, --entry <s>', 'Specify entry files', '**/*.md')
+  .option('-o, --output <s>', 'Specify destination directory', './docs') // Output directory
+  .option('-e, --entry <s>', 'Specify entry files', '**/*.md') // Markdown content
   .option('-w, --watch', 'Watch for changes')
   .option('-s, --start', 'Start dev server')
   .parse(process.argv);

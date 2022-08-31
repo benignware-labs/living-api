@@ -1,3 +1,5 @@
+@import './theme.css';
+
 @import './components/Container.css';
 @import './components/Dropdown.css';
 @import './components/Accordion.css';
@@ -5,11 +7,15 @@
 @import './components/Icon.css';
 @import './components/Menu.css';
 @import './components/Navbar.css';
-
-@import './content/Table';
-@import './content/Blockquote';
+@import './content/Table.css';
+@import './content/Blockquote.css';
 
 .turbolinks-progress-bar {
   height: 5px;
   background-color: white;
+}
+
+.code.hljs {
+  overflow: auto;
+  max-height: 400px;
 }
